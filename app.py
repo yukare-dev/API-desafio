@@ -44,5 +44,26 @@ def doar():
     return jsonify({"mensagem": "Livro cadastrado com sucesso"}), 201
 
 
+@app.route("/livros", methods=["GET"])
+def listar_livros():
+
+    with sqlite3.connect("database.db") as conn:
+        livros = conn.execute("SELECT * FROM LIVROS").fetchall()
+
+        livros_formatados = []
+
+        for item in livros:
+            dicionario_livros = {
+                "id": item[0],
+                "titulo": item[1],
+                "categoria": item[2],
+                "autor": item[3],
+                "image": item[4]
+            }
+            livros_formatados.append(dicionario_livros)
+
+    return jsonify(livros_formatados), 200
+
+
 if __name__ == "__main__":
     app.run(debug=True)
