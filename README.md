@@ -57,3 +57,42 @@ Endpoint para o cadastro das informações do livro doado.
   "image_url": "https://m.media-amazon.com/images/I/61TaHURu27L._AC_UF1000,1000_QL80_.jpg"
 }
 ```
+
+**Resposta (201)**
+
+```json
+{
+  "mensagem": "Livro cadastrado com sucesso!"
+}
+```
+
+---
+
+### GET /livros
+
+O endpoint /livros retorna todos os livros cadastrados na API.
+
+**Resposta (200):**
+
+```json
+{
+  "id": "1",
+  "titulo": "A hora da estrela",
+  "categoria": "Romance",
+  "autor": "Clarice Lispector",
+  "image_url": "https://m.media-amazon.com/images/I/61TaHURu27L._AC_UF1000,1000_QL80_.jpg"
+}
+```
+
+---
+
+## Tecnologias utilizadas
+
+- Python 3
+- Flask
+- SQLite
+- Flask-CORS
+
+---
+
+Feito por João Pedro Belo
